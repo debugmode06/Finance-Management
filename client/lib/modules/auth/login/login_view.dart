@@ -56,28 +56,49 @@ class LoginView extends GetView<LoginController> {
 
               const SizedBox(height: 56),
 
-              // ── Form ──────────────────────────────────────────────────
-              Obx(() => AppTextField(
-                    label: 'Email',
-                    hint: 'Enter your email',
-                    controller: emailCtrl,
-                    keyboardType: TextInputType.emailAddress,
-                    prefixIcon: Icons.mail_outline_rounded,
-                    textCapitalization: TextCapitalization.none,
-                    validator: (_) => controller.emailError.value,
-                  )),
+              // ── Email Field ───────────────────────────────────────────
+              AppTextField(
+                label: 'Email',
+                hint: 'Enter your email',
+                controller: emailCtrl,
+                keyboardType: TextInputType.emailAddress,
+                prefixIcon: Icons.mail_outline_rounded,
+                textCapitalization: TextCapitalization.none,
+              ),
+              // Error text below email field
+              Obx(() {
+                final err = controller.emailError.value;
+                if (err == null) return const SizedBox.shrink();
+                return Padding(
+                  padding: const EdgeInsets.only(top: 4, left: 4),
+                  child: Text(err,
+                      style: AppTextStyles.caption
+                          .copyWith(color: AppColors.danger)),
+                );
+              }),
 
               const SizedBox(height: 16),
 
-              Obx(() => AppTextField(
-                    label: 'Password',
-                    hint: 'Enter your password',
-                    controller: passCtrl,
-                    obscureText: true,
-                    prefixIcon: Icons.lock_outline_rounded,
-                    textCapitalization: TextCapitalization.none,
-                    validator: (_) => controller.passwordError.value,
-                  )),
+              // ── Password Field ────────────────────────────────────────
+              AppTextField(
+                label: 'Password',
+                hint: 'Enter your password',
+                controller: passCtrl,
+                obscureText: true,
+                prefixIcon: Icons.lock_outline_rounded,
+                textCapitalization: TextCapitalization.none,
+              ),
+              // Error text below password field
+              Obx(() {
+                final err = controller.passwordError.value;
+                if (err == null) return const SizedBox.shrink();
+                return Padding(
+                  padding: const EdgeInsets.only(top: 4, left: 4),
+                  child: Text(err,
+                      style: AppTextStyles.caption
+                          .copyWith(color: AppColors.danger)),
+                );
+              }),
 
               const SizedBox(height: 32),
 

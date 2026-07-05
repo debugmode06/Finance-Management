@@ -50,13 +50,13 @@ const exportReport = asyncHandler(async (req, res) => {
   const filters = { period, department, status };
 
   let result;
-  if (format === 'excel') {
+  if (format === 'excel' || format === 'xlsx') {
     result = await generateExcel(proposals, filters);
   } else {
     result = await generatePDF(proposals, filters);
   }
 
-  const mimeType = format === 'excel'
+  const mimeType = (format === 'excel' || format === 'xlsx')
     ? 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
     : 'application/pdf';
 
