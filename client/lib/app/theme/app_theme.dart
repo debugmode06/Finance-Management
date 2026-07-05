@@ -30,7 +30,7 @@ class AppTheme {
 
       // ─── AppBar ────────────────────────────────────────────────────────
       appBarTheme: AppBarTheme(
-        backgroundColor: AppColors.background.withOpacity(0.85),
+        backgroundColor: AppColors.background.withValues(alpha: 0.85),
         elevation: 0,
         scrolledUnderElevation: 0,
         centerTitle: true,

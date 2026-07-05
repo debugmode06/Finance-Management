@@ -114,7 +114,7 @@ class AppColors {
   // ─── Shadow ─────────────────────────────────────────────────────────────────
   static List<BoxShadow> softShadow = [
     BoxShadow(
-      color: Colors.black.withOpacity(0.05),
+      color: Colors.black.withValues(alpha: 0.05),
       blurRadius: 20,
       offset: const Offset(0, 4),
       spreadRadius: 0,
@@ -123,7 +123,7 @@ class AppColors {
 
   static List<BoxShadow> mediumShadow = [
     BoxShadow(
-      color: Colors.black.withOpacity(0.08),
+      color: Colors.black.withValues(alpha: 0.08),
       blurRadius: 30,
       offset: const Offset(0, 8),
       spreadRadius: 0,
@@ -132,7 +132,7 @@ class AppColors {
 
   static List<BoxShadow> primaryShadow = [
     BoxShadow(
-      color: primary.withOpacity(0.25),
+      color: primary.withValues(alpha: 0.25),
       blurRadius: 20,
       offset: const Offset(0, 6),
       spreadRadius: 0,

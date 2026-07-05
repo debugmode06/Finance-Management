@@ -37,8 +37,8 @@ class AppCard extends StatelessWidget {
         child: InkWell(
           onTap: onTap,
           borderRadius: BorderRadius.circular(radius),
-          splashColor: AppColors.primary.withOpacity(0.04),
-          highlightColor: AppColors.primary.withOpacity(0.02),
+          splashColor: AppColors.primary.withValues(alpha: 0.04),
+          highlightColor: AppColors.primary.withValues(alpha: 0.02),
           child: Padding(
             padding: padding ?? const EdgeInsets.all(16),
             child: child,
@@ -80,7 +80,7 @@ class StatCard extends StatelessWidget {
                 width: 40,
                 height: 40,
                 decoration: BoxDecoration(
-                  color: color.withOpacity(0.12),
+                  color: color.withValues(alpha: 0.12),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Icon(icon, color: color, size: 20),

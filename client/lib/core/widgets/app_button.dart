@@ -34,7 +34,7 @@ class AppButton extends StatelessWidget {
 
     switch (variant) {
       case AppButtonVariant.primary:
-        bgColor = disabled ? AppColors.primary.withOpacity(0.5) : AppColors.primary;
+        bgColor = disabled ? AppColors.primary.withValues(alpha: 0.5) : AppColors.primary;
         textColor = Colors.white;
         borderColor = null;
         break;
@@ -44,7 +44,7 @@ class AppButton extends StatelessWidget {
         borderColor = null;
         break;
       case AppButtonVariant.destructive:
-        bgColor = disabled ? AppColors.danger.withOpacity(0.5) : AppColors.danger;
+        bgColor = disabled ? AppColors.danger.withValues(alpha: 0.5) : AppColors.danger;
         textColor = Colors.white;
         borderColor = null;
         break;
@@ -72,7 +72,7 @@ class AppButton extends StatelessWidget {
         child: InkWell(
           onTap: disabled ? null : onPressed,
           borderRadius: BorderRadius.circular(14),
-          splashColor: Colors.white.withOpacity(0.1),
+          splashColor: Colors.white.withValues(alpha: 0.1),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Row(

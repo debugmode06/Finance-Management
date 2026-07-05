@@ -74,7 +74,7 @@ class ProposalHistoryView extends GetView<ProposalHistoryController> {
                         shape: BoxShape.circle,
                         border: Border.all(
                             color: AppColors.statusText(h.status)
-                                .withOpacity(0.3),
+                                .withValues(alpha: 0.3),
                             width: 2),
                       ),
                       child: Icon(

@@ -128,7 +128,7 @@ class NotificationsView extends GetView<NotificationsController> {
                       );
                     }
                   },
-                  color: n.isRead ? AppColors.background : AppColors.primaryLight.withOpacity(0.4),
+                  color: n.isRead ? AppColors.background : AppColors.primaryLight.withValues(alpha: 0.4),
                   padding: const EdgeInsets.all(14),
                   child: Row(
                     children: [
@@ -136,7 +136,7 @@ class NotificationsView extends GetView<NotificationsController> {
                         width: 44,
                         height: 44,
                         decoration: BoxDecoration(
-                          color: _notifColor(n.type).withOpacity(0.12),
+                          color: _notifColor(n.type).withValues(alpha: 0.12),
                           shape: BoxShape.circle,
                         ),
                         child: Icon(_notifIcon(n.type),

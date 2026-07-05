@@ -48,7 +48,7 @@ class SplashView extends GetView<SplashController> {
               height: 32,
               child: CircularProgressIndicator(
                 strokeWidth: 2.5,
-                color: AppColors.primary.withOpacity(0.4),
+                color: AppColors.primary.withValues(alpha: 0.4),
               ),
             ),
           ],

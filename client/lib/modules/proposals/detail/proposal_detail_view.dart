@@ -135,7 +135,7 @@ class ProposalDetailView extends GetView<ProposalDetailController> {
         decoration: BoxDecoration(
           color: AppColors.dangerLight,
           borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: AppColors.danger.withOpacity(0.3)),
+          border: Border.all(color: AppColors.danger.withValues(alpha: 0.3)),
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -355,7 +355,7 @@ class ProposalDetailView extends GetView<ProposalDetailController> {
         color: AppColors.background,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.06),
+            color: Colors.black.withValues(alpha: 0.06),
             blurRadius: 20,
             offset: const Offset(0, -4),
           ),

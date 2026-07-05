@@ -1,5 +1,5 @@
 class AppConstants {
-  static const String baseUrl = 'http://10.0.2.2:5000/api/v1';
+  static const String baseUrl = 'http://127.0.0.1:5000/api/v1';
   // For iOS simulator: http://localhost:5000/api/v1
   // For physical device: http://YOUR_LAN_IP:5000/api/v1
 
@@ -11,8 +11,8 @@ class AppConstants {
   static const String roleFinanceDirector = 'finance_director';
   static const String roleDirector = 'director';
 
-  static const int connectTimeout = 30000;
-  static const int receiveTimeout = 60000;
+  static const int connectTimeout = 8000;
+  static const int receiveTimeout = 15000;
 
   static const List<String> departments = [
     'Technical Activities',
