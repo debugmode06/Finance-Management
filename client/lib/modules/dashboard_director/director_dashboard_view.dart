@@ -73,14 +73,21 @@ class DirectorDashboardView extends GetView<DirectorDashboardController> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('My Dashboard',
-                      style: AppTextStyles.bodySmall
-                          .copyWith(color: AppColors.textSecondary)),
-                  const Text('Finance Proposals', style: AppTextStyles.displayMedium),
-                ],
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('My Dashboard',
+                        style: AppTextStyles.bodySmall
+                            .copyWith(color: AppColors.textSecondary)),
+                    const Text(
+                      'Finance Proposals',
+                      style: AppTextStyles.displayMedium,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ],
+                ),
               ),
               Row(
                 children: [

@@ -600,10 +600,15 @@ class _CommentBubble extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Text(comment.author?.name ?? 'Unknown',
-                        style: AppTextStyles.labelLarge),
+                    Flexible(
+                      child: Text(
+                        comment.author?.name ?? 'Unknown',
+                        style: AppTextStyles.labelLarge,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
                     const SizedBox(width: 8),
-                    if (comment.isFinanceDirector)
+                    if (comment.isFinanceDirector) ...[
                       Container(
                         padding: const EdgeInsets.symmetric(
                             horizontal: 6, vertical: 2),
@@ -615,6 +620,8 @@ class _CommentBubble extends StatelessWidget {
                             style: AppTextStyles.caption
                                 .copyWith(color: AppColors.primary)),
                       ),
+                      const SizedBox(width: 8),
+                    ],
                     const Spacer(),
                     if (comment.createdAt != null)
                       Text(

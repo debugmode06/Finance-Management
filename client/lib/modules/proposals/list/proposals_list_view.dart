@@ -184,21 +184,32 @@ class _ProposalCard extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 8),
-            Row(
+            Wrap(
+              spacing: 12,
+              runSpacing: 4,
+              crossAxisAlignment: WrapCrossAlignment.center,
               children: [
-                const Icon(Icons.business_outlined,
-                    size: 14, color: AppColors.textTertiary),
-                const SizedBox(width: 4),
-                Text(proposal.department,
-                    style: AppTextStyles.bodySmall),
-                const SizedBox(width: 16),
-                if (proposal.createdBy != null) ...[
-                  const Icon(Icons.person_outline_rounded,
-                      size: 14, color: AppColors.textTertiary),
-                  const SizedBox(width: 4),
-                  Text(proposal.createdBy!.name,
-                      style: AppTextStyles.bodySmall),
-                ],
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Icon(Icons.business_outlined,
+                        size: 14, color: AppColors.textTertiary),
+                    const SizedBox(width: 4),
+                    Text(proposal.department,
+                        style: AppTextStyles.bodySmall),
+                  ],
+                ),
+                if (proposal.createdBy != null)
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const Icon(Icons.person_outline_rounded,
+                          size: 14, color: AppColors.textTertiary),
+                      const SizedBox(width: 4),
+                      Text(proposal.createdBy!.name,
+                          style: AppTextStyles.bodySmall),
+                    ],
+                  ),
               ],
             ),
             const SizedBox(height: 10),

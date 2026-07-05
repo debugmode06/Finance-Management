@@ -70,15 +70,21 @@ class AdminDashboardView extends GetView<AdminDashboardController> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Good day! 👋',
-                          style: AppTextStyles.bodySmall
-                              .copyWith(color: AppColors.textSecondary)),
-                      const Text('Dashboard',
-                          style: AppTextStyles.displayMedium),
-                    ],
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Good day! 👋',
+                            style: AppTextStyles.bodySmall
+                                .copyWith(color: AppColors.textSecondary)),
+                        const Text(
+                          'Dashboard',
+                          style: AppTextStyles.displayMedium,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ],
+                    ),
                   ),
                   Row(
                     children: [
